@@ -1,5 +1,4 @@
 package main;
-import java.net.SocketPermission;
 import java.util.Scanner;
 
 public class App 
@@ -25,20 +24,20 @@ public class App
                 switch (i) 
                 {
                     case 1:
-                    System.out.println("Anna kurssin nimi: ");
+                    System.out.println("Anna kurssin nimi:");
                     String kurssi = sc.nextLine();
-                    System.out.println("Anna kurssin ID: ");
+                    System.out.println("Anna kurssin ID:");
                     String kurssiID = sc.nextLine();
-                    System.out.println("Anna kurssin maksimi opiskelijamäärä: ");
+                    System.out.println("Anna kurssin maksimi opiskelijamäärä:");
                     a = sc.nextLine();
                     int maksimiOppilaat = Integer.parseInt(a);
                     gifu.addCourse(kurssi, kurssiID, maksimiOppilaat);
                     break;
 
                     case 2:
-                    System.out.println("Anna opiskelijan nimi: ");
+                    System.out.println("Anna opiskelijan nimi:");
                     String nimi = sc.nextLine();
-                    System.out.println("Anna opiskelijan opiskelianumero: ");
+                    System.out.println("Anna opiskelijan opiskelijanumero:");
                     String opiskelijaNumero = sc.nextLine();
                     gifu.addStudent(nimi, opiskelijaNumero);
 
@@ -54,11 +53,11 @@ public class App
 
                     case 5:
                     gifu.listCourses();
-                    System.out.println("Mille kurssille haluat lisätä opiskelijan? Syötä kurssin numero: ");
+                    System.out.println("Mille kurssille haluat lisätä opiskelijan? Syötä kurssin numero:");
                     a = sc.nextLine();
                     int kurId = Integer.parseInt(a);
                     gifu.listStudents();
-                    System.out.println("Minkä opiskelija haluat lisätä kurssille? Syötä opiskelijan numero: ");
+                    System.out.println("Minkä opiskelijan haluat lisätä kurssille? Syötä opiskelijan numero:");
                     a = sc.nextLine();
                     int opId = Integer.parseInt(a);
                     gifu.courses.get(kurId).addenrollment(gifu.students.get(opId));
