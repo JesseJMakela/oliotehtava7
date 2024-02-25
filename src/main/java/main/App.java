@@ -63,6 +63,22 @@ public class App
                     gifu.courses.get(kurId).addenrollment(gifu.students.get(opId));
                     break;
 
+                    case 6:
+                    gifu.listCourses();
+                    System.out.println("Minkä kurssin haluat arvostella? Syötä kurssin numero:");
+                    a = sc.nextLine();
+                    int selectedCourseIndex = Integer.parseInt(a);
+                    Course selectedCourse = gifu.courses.get(selectedCourseIndex);
+                
+                    for (Enrollment enrollment : selectedCourse.getEnrollments()) 
+                    {
+                        System.out.println("Anna arvosana opiskelijalle " + enrollment.getStudent().getId() + " " + enrollment.getStudent().getName());
+                        a = sc.nextLine();
+                        int grade = Integer.parseInt(a);
+                        enrollment.setGrade(grade);
+                    }
+                    break;
+
                     case 9:
 
                     gifu.listEnrolled();

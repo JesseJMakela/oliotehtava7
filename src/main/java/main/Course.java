@@ -1,13 +1,14 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Course implements PrintInfo
 {
     private int maxnumberOfStunedts;
     private String name;
     private String id;
-    private ArrayList<Enrollment> enrollments;
+    ArrayList<Enrollment> enrollments;
 
     public void printInfo(int n) {
         System.out.println(n + ") "+id + " " + name);
@@ -28,7 +29,10 @@ public class Course implements PrintInfo
     {
         System.out.println(id + " " + name);
         for (Enrollment enrollment : enrollments) {
-            System.out.println(enrollment.getStudent().getId() +" "+ enrollment.getStudent().getName() + ", arvosana: " + enrollment.grade);
+            System.out.println(enrollment.getStudent().getId() +" "+ enrollment.getStudent().getName() + ", arvosana: " + enrollment.getGrade());
         }
+    }
+    public List<Enrollment> getEnrollments() {
+        return enrollments;
     }
 }
