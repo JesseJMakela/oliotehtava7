@@ -1,12 +1,17 @@
 package main;
+import java.net.SocketPermission;
 import java.util.Scanner;
 
 public class App 
 {
     public static void main( String[] args )
     {
-        Gifu gifu = new Gifu();
         Scanner sc = new Scanner(System.in);
+        System.out.println( "Tervetuloa Gifu-järjestelmään" );
+        System.out.println("Mille yliopistolle haluat ottaa järjestelmän käyttöön?");
+        String käyttäjä = sc.nextLine();
+
+        Gifu gifu = new Gifu();
         String a;
         boolean exit = false;
         
@@ -63,6 +68,9 @@ public class App
 
                     gifu.listEnrolled();
                     
+                    case 0:
+                    System.out.println("Kiitos ohjelman käytöstä.");
+                    exit = true;
 
                     break;
 
